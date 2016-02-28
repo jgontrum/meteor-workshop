@@ -5,14 +5,14 @@ angular
 function HomeCtrl($scope, $reactive) {
     $reactive(this).attach($scope);
 
-    this.subscribe('placeholder');
+    this.subscribe('tasks');
 
     $scope.helpers({
         isLoggedIn: () => {
             return Meteor.userId() !== null;
         },
         tasks: () => {
-            return Placeholder.find({});
+            return Tasks.find({});
         }
     });
 
@@ -23,7 +23,6 @@ function HomeCtrl($scope, $reactive) {
     };
 
     $scope.updateTask = function(task) {
-        console.log(task);
         if (!!task) {
             Meteor.call("updateTask", task);
         }

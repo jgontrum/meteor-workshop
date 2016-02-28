@@ -1,1 +1,1 @@
-Placeholder = new Mongo.Collection("placeholder");
+Tasks = new Mongo.Collection("tasks");

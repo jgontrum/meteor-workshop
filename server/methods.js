@@ -8,14 +8,13 @@ Meteor.methods({
         }
     },
     addNewTask: function(newTaskName) {
-        Placeholder.insert({
+        Tasks.insert({
             description: newTaskName,
             done: false
         })
     },
     updateTask: function(task) {
-        console.log(task);
-        Placeholder.update({_id: task._id}, {
+        Tasks.update({_id: task._id}, {
             $set: {
                 done: task.done
             }

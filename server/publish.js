@@ -1,3 +1,3 @@
-Meteor.publish('placeholder', function() {
-    return Placeholder.find();
+Meteor.publish('tasks', function() {
+    return Tasks.find();
 });
