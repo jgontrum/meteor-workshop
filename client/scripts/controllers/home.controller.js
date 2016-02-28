@@ -19,6 +19,7 @@ function HomeCtrl($scope, $reactive) {
     $scope.addNewTask = function(newTaskName) {
         if (!!newTaskName) {
             Meteor.call("addNewTask", newTaskName);
+            $scope.newTask = "";
         }
     };
 

@@ -1,7 +1,7 @@
 <ion-view view-title="Home">
     <ion-content>
         <ion-list>
-            <div class="item item-input-inset">
+            <div ng-if="isLoggedIn" class="item item-input-inset">
                 <label class="item-input-wrapper">
                     <input type="text" placeholder="Neue Aufgabe" ng-model="newTask">
                 </label>
@@ -11,9 +11,7 @@
             </div>
 
             <ion-checkbox ng-repeat="task in tasks" ng-model="task.done" ng-click="updateTask(task)">{{task.description}}</ion-checkbox>
-        </ion-list>
 
-        <div ng-if="isLoggedIn"></div>
-        <div ng-if="!isLoggedIn"></div>
+        </ion-list>
     </ion-content>
 </ion-view>

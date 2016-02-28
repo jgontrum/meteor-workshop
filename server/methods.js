@@ -8,10 +8,15 @@ Meteor.methods({
         }
     },
     addNewTask: function(newTaskName) {
-        Tasks.insert({
-            description: newTaskName,
-            done: false
-        })
+        if (!!this.userId) {
+            Tasks.insert({
+                description: newTaskName,
+                done: false,
+                user: this.userId
+            });
+        } else {
+            throw new Meteor.Error("not-authorized", "This action is not authorized.");
+        }
     },
     updateTask: function(task) {
         Tasks.update({_id: task._id}, {

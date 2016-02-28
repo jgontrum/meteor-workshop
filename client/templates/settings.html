@@ -2,7 +2,9 @@
     <ion-content>
         <blaze-template ng-if="!isLoggedIn" name="atForm"></blaze-template>
         <div class="list" ng-if="isLoggedIn">
-            User is logged in.
+            <button ng-click="logOut()" class="button button-full button-assertive">
+                Ausloggen
+            </button>
         </div>
     </ion-content>
 </ion-view>

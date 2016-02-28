@@ -2,7 +2,7 @@ angular
     .module('App')
     .controller('SettingsCtrl', SettingsCtrl);
 
-function SettingsCtrl($scope, $reactive, $ionicPopup) {
+function SettingsCtrl($scope, $reactive) {
     $reactive(this).attach($scope);
 
     this.subscribe('placeholder');
@@ -12,4 +12,8 @@ function SettingsCtrl($scope, $reactive, $ionicPopup) {
             return Meteor.userId() !== null;
         }
     });
+
+    $scope.logOut = function() {
+        Meteor.logout();
+    };
 }
