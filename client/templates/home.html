@@ -1,10 +1,19 @@
 <ion-view view-title="Home">
     <ion-content>
-        <div ng-if="isLoggedIn">
-            User is logged in.
-        </div>
-        <div ng-if="!isLoggedIn">
-            User is not logged in.
-        </div>
+        <ion-list>
+            <div class="item item-input-inset">
+                <label class="item-input-wrapper">
+                    <input type="text" placeholder="Neue Aufgabe">
+                </label>
+                <button class="button button-small">
+                    Hinzufügen
+                </button>
+            </div>
+
+            <ion-checkbox ng-model="filter.blue">Irgendeine statische Aufgabe</ion-checkbox>
+        </ion-list>
+
+        <div ng-if="isLoggedIn"></div>
+        <div ng-if="!isLoggedIn"></div>
     </ion-content>
 </ion-view>
