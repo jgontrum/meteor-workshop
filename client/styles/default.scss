@@ -1,0 +1,7 @@
+/*
+For a moment there's two <i>-elements inside tab-item, don't allow both to be shown.
+This is to prevent the flickering of tab icons
+*/
+.tabs .tab-item i:nth-of-type(2) {
+  display: none;
+}
